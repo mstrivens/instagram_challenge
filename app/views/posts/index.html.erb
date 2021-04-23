@@ -1,5 +1,5 @@
-Hello, jpasquale!
 <% if current_user %>
+Hello, <%= current_user.username %>!
   <%= "Log Out" %>
 <% else %>
   <%= link_to "Sign Up", signup_path %>
