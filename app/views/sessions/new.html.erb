@@ -1,7 +1,13 @@
-<%= form_for @user do |form| %>
-  <%= form.label :username %>
-  <%= form.text_field :username %>
-  <%= form.label :password %>
-  <%= form.text_field :password %>
-  <%= form.submit "Submit" %>
+<%= form_tag sessions_path do |form| %>
+  <div class='field'>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+  </div>
+  <div class='field'>
+    <%= label_tag :password %>
+    <%= text_field_tag :password %>
+  </div>
+  <div class='actions'>
+    <%= submit_tag 'Log In' %>
+  </div>
 <% end %>

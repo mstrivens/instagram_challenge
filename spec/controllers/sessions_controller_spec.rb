@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe SessionsController, type: :controller do
   before (:each) do
-    User.create()
+    User.create(username: 'Max', password: 'jumbo')
   end
 
-  describe "GET /sessions/new" do
+  describe "GET /sessions#create" do
     it 'responds with 200' do
       get :new
       expect(response).to have_http_status(200)
@@ -13,9 +13,11 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "POST /" do
-    it 'responds with 200' do
-      post :create, params: { user: { username: "jpasquale", password: "bigjoe" } }
-      expect(response).to redirect_to(root_url)
+      it 'creates a new session when a user logs in'  do
+        params = ActionController::Parameters.new(username: 'Max', password: 'jumbo')
+        allow(controller).to receive(:params).and_return(params)
+        post :create
+        expect(session[:user_id]).to be
     end
   end
 end
