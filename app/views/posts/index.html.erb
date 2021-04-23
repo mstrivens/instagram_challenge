@@ -1,2 +1,6 @@
 Hello, jpasquale!
-<%= link_to "Sign Up", signup_path %>
+<% if current_user %>
+  <%= "Log Out" %>
+<% else %>
+  <%= link_to "Sign Up", signup_path %>
+<% end %>
