@@ -20,4 +20,17 @@ RSpec.describe SessionsController, type: :controller do
         expect(session[:user_id]).to be
     end
   end
+
+  # The test below checks to see that a 200 response is sent even if incorrect details
+  # are entered. This sent a 204 message before the else statement was included in the
+  # sessions controller.
+
+  describe "POST /" do
+      it 'rerenders the page if incorrect details are entered'  do
+        params = ActionController::Parameters.new(username: 'Wrong', password: 'wrong')
+        allow(controller).to receive(:params).and_return(params)
+        post :create
+        expect(response).to have_http_status(200)
+    end
+  end
 end
