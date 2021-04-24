@@ -13,7 +13,7 @@ RSpec.feature "Log In", type: :feature do
 end
 
 RSpec.feature "Log In", type: :feature do
-  scenario "Users type incorrect username" do
+  scenario "Users type incorrect password" do
     User.create(username: 'jpasquale', password: 'bigjoe')
     visit '/'
     click_link 'Log In'
