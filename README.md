@@ -16,6 +16,10 @@ So I can protect my information
 I would like to be able to log out of my account
 
 As a user
+So I can see my recent history of posting
+I would like to be able to see my posts in reverse chronological order
+
+As a user
 So I can show my photos to the world
 I would like to be able to post them
 

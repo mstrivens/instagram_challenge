@@ -5,3 +5,14 @@ Hello, <%= current_user.username %>!
   <%= link_to "Sign Up", signup_path %>
   <%= link_to "Log In", login_path %>
 <% end %>
+
+<%= @posts.each do |post| %>
+  <p class="post"><%= post.message %>
+
+<% end %>  
+
+<% if current_user %>
+  <%= link_to new_post_path do%>
+  New Post
+  <% end %>
+<% end %>
