@@ -10,16 +10,22 @@ RSpec.feature "Alert", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Username has already been taken")
   end
+
+  scenario "When signing up alert when username not entered" do
+    visit '/'
+    click_link 'Sign Up'
+    fill_in "Username", with: ""
+    fill_in "Password", with: "bigjoe"
+    click_button "Submit"
+    expect(page).to have_content("Username can't be blank")
+  end
+
+  scenario "When signing up alert when password not valid" do
+    visit '/'
+    click_link 'Sign Up'
+    fill_in "Username", with: "jpasquale"
+    fill_in "Password", with: ""
+    click_button "Submit"
+    expect(page).to have_content("Password can't be blank")
+  end
 end
-#
-# RSpec.feature "Alert", type: :feature do
-#   scenario "Alert when username not unique" do
-#     User.create(username: '', password: 'bigjoe')
-#     visit '/'
-#     click_link 'Log In'
-#     fill_in "Username", with: "jpasquale"
-#     fill_in "Password", with: "bigjoe"
-#     click_button "Log In"
-#     expect(page).to have_content("Hello, jpasquale!")
-#   end
-# end
