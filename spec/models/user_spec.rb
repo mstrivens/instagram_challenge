@@ -9,4 +9,11 @@ RSpec.describe User do
     user = User.create(username: nil, password: "bigjoe")
     expect(user).not_to be_valid
   end
+
+# Below test actually covered by has_secure_password class method is User
+
+  it "doesn't save without a password" do
+    user = User.create(username: "bigfoot", password: nil)
+    expect(user).not_to be_valid
+  end
 end
