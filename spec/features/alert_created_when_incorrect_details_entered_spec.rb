@@ -28,4 +28,16 @@ RSpec.feature "Alert", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Password can't be blank")
   end
+
+
+  scenario "When logging in alert when username incorrect" do
+    User.create(username: 'jpasquale', password: 'bigjoe')
+    visit '/'
+    click_link 'Log In'
+    fill_in "Username", with: "jpas"
+    fill_in "Password", with: "bigjoe"
+    click_button "Log In"
+    expect(page).to have_content("Email or password is invalid")
+  end
+
 end
