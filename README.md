@@ -6,7 +6,14 @@ Instagram Challenge
 * Fork/Clone the repo
 * Download
 * Run Bundler
+* db:create
+* db:migrate
+
+
+* Run RSpec
 * Run 'rails s'
+
+
 
 ## User Stories
 
