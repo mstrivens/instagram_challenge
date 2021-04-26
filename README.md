@@ -1,6 +1,13 @@
 Instagram Challenge
 ===================
 
+## How to Use
+
+* Fork/Clone the repo
+* Download
+* Run Bundler
+* Run 'rails s'
+
 ## User Stories
 
 As a user    
