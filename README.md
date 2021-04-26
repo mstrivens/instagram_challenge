@@ -4,8 +4,8 @@ Instagram Challenge
 ## User Stories
 
 As a user    
-So I can post photos. 
-I would like to be able to create an account. 
+So I can post photos   
+I would like to be able to create an account    
 
 As a user
 So I can personalise my account
